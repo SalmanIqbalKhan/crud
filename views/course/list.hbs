@@ -1,0 +1,26 @@
+<h3><a class="btn btn-secondary" href="/course"><i class="fa fa-plus"></i> Create New</a> Course List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Course_Name</th>
+            <th>Course_id</th>
+            <th>Course_Duration</th>
+            <th>Course_Fee</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.Course_Name}}</td>
+            <td>{{this.Course_id}}</td>
+            <td>{{this.Course_Duration}}</td>
+            <td>{{this.Course_Fee}}</td>
+            <td>
+                <a href="/course/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/course/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
